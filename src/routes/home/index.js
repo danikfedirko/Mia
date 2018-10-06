@@ -8,8 +8,6 @@
  */
 
 import React from 'react';
-import Home from './Home';
-import Layout from '../../components/Layout';
 
 async function action({ fetch }) {
   const resp = await fetch('/graphql', {
@@ -20,12 +18,8 @@ async function action({ fetch }) {
   const { data } = await resp.json();
   if (!data || !data.news) throw new Error('Failed to load the news feed.');
   return {
-    title: 'React Starter Kit',
-    component: (
-      <Layout>
-        <Home news={data.news} />
-      </Layout>
-    ),
+    title: 'Mia',
+    component: <h1>MIA</h1>,
   };
 }
 
